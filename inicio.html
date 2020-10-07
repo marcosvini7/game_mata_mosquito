@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Jogo Mata Mosquito</title>
+		<script type="text/javascript" src="jogo.js"></script>
+
+		<style type="text/css">
+			
+			html{
+		       cursor: url(imagens/mata_mosca.png) 30 30, auto;
+		    }
+			.painel{
+				height: 100px;
+				width: 150px;
+				background: white;
+				opacity: 0.7;
+				position: absolute;
+				left: 0;
+				bottom: 0;
+				font-size: 1.2em;
+			}
+			.mosquito0{
+				height: 40px;
+				width: 40px;
+			}
+			.mosquito1{
+				height: 50px;
+				width: 50px;
+			}
+			.mosquito2{
+				height: 60px;
+				width: 60px;
+			}
+			.mosquito3{
+				height: 70px;
+				width: 70px;
+			}
+			.mosquito4{
+				height: 80px;
+				width: 80px;
+			}
+			.mosquito5{
+				height: 100px;
+				width: 100px;
+			}
+			.ladoA{
+				transform: scaleX(1);
+			}
+			.ladoB{
+				transform: scaleX(-1);
+			}
+			.fundo1{
+				background: url(imagens/fundo1.png);
+			}
+			.fundo2{
+				background: url(imagens/fundo2.jpg);
+			}
+			.fundo3{
+				background: url(imagens/fundo3.jpg);
+			}
+			.fundo4{
+				background: url(imagens/fundo4.jpg);
+			}
+			.fundo5{
+				background: url(imagens/fundo5.png);
+			}
+		</style>
+
+	</head>
+
+	<body onresize="ajustarTela()" id="fundo">
+		
+		<script type="text/javascript"> 
+			escolherFundo()
+		</script>		
+
+		<script type="text/javascript">
+			var criarMosquito = setInterval(function(){adicionarMosquito()},tempoCriaMosquito)
+		</script>
+
+		<div class="painel">
+			<p>Tempo restante: <span id="cronometro"></span><p>
+			<div style="float: left">
+				<img id="c1" src="imagens/coracao_cheio.png"> 
+				<img id="c2" src="imagens/coracao_cheio.png"> 
+				<img id="c3" src="imagens/coracao_cheio.png">
+			</div> 
+		</div>
+
+		<script type="text/javascript">
+			var intervalo = setInterval(function(){
+				cronometro()
+			}, 1000)
+		</script>
+		
+	</body>
+
+</html>
